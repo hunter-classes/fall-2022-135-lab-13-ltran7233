@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <cctype>
 #include "funcs.h"
 
 void printRange(int left, int right)
@@ -42,4 +44,19 @@ int sumArrayInRange(int *arr, int left, int right)
 		sum = arr[left] + sumArrayInRange(arr,left+1,right);
 	}
 	return sum;
+}
+
+bool isAlphanumeric(std::string s)
+{
+	bool valid = true;
+	int size = s.length();
+	if (size>0)
+	{
+		valid = isalnum(s[0]);
+		if (valid)
+		{
+			valid = isAlphanumeric(s.substr(1,size-1));
+		}
+	}
+	return valid;
 }
