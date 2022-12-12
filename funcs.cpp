@@ -13,3 +13,13 @@ void printRange(int left, int right)
 		std::cout << right << std::endl;
 	}
 }
+
+int sumRange(int left, int right)
+{
+	int sum = 0;
+	if (left<=right)
+	{
+		sum = left + sumRange(left+1,right);
+	}
+	return sum;
+}
