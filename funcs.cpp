@@ -6,14 +6,17 @@
 std::string printRange(int left, int right)
 {
 	std::string str = "";
-	if (left<right)
+	if (left<=right)
 	{
-		str = std::to_string(left) + " ";
-		str += printRange(left+1,right);
-	}
-	else
-	{
-		str += std::to_string(right);
+		if (left<right)
+		{
+			str = std::to_string(left) + " ";
+			str += printRange(left+1,right);
+		}
+		else
+		{
+			str += std::to_string(right);	
+		}
 	}
 	return str;
 }

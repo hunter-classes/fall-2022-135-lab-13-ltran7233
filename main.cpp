@@ -3,14 +3,17 @@
 
 int main()
 {
+	std::cout << "Task A: " << std::endl;
 	std::cout << printRange(-2,10) << std::endl;
 	
+	std::cout << "Task B: " << std::endl;
 	int x = sumRange(1,3);
 	std::cout << "This is " << x << std::endl;	// 6
 	
 	int y = sumRange(-2, 10);
 	std::cout << "That is " << y << std::endl;	// 52
 	
+	std::cout << "Task C: " << std::endl;
 	int size = 10;
 	int *arr = new int[size]; // allocate array dynamically
 	arr[0] = 12;
