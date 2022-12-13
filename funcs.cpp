@@ -3,17 +3,19 @@
 #include <cctype>
 #include "funcs.h"
 
-void printRange(int left, int right)
+std::string printRange(int left, int right)
 {
+	std::string str = "";
 	if (left<right)
 	{
-		std::cout << left << " ";
-		printRange(left+1,right);
+		str = std::to_string(left) + " ";
+		str += printRange(left+1,right);
 	}
 	else
 	{
-		std::cout << right << std::endl;
+		str += std::to_string(right);
 	}
+	return str;
 }
 
 int sumRange(int left, int right)
@@ -57,6 +59,25 @@ bool isAlphanumeric(std::string s)
 		{
 			valid = isAlphanumeric(s.substr(1,size-1));
 		}
+	}
+	return valid;
+}
+
+bool nestedParens(std::string s)
+{
+	bool valid = true;
+	int size = s.length();
+	if (size>0)
+	{
+		if ((s.substr(0,1)!="(") || (s.substr(size-1,1)!=")"))
+		{
+			valid = false;
+		}
+		if (valid)
+		{
+			valid = nestedParens(s.substr(1, size-2));
+		}
+		
 	}
 	return valid;
 }

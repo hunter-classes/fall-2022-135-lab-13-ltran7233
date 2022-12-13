@@ -3,7 +3,7 @@
 
 int main()
 {
-	printRange(-2,10);
+	std::cout << printRange(-2,10) << std::endl;
 	
 	int x = sumRange(1,3);
 	std::cout << "This is " << x << std::endl;	// 6
@@ -32,8 +32,19 @@ int main()
 
 	delete[] arr;	// deallocate it
 	
+	std::cout << "Task D: " << std::endl;
 	std::cout << isAlphanumeric("ABCD") << std::endl;	// true (1)
 	std::cout << isAlphanumeric("Abcd1234xyz") << std::endl; // true (1)
 	std::cout << isAlphanumeric("KLMN 8-7-6") << std::endl;  // false (0)
+	
+	std::cout << "Task E: " << std::endl;
+	std::cout << nestedParens("((()))") << std::endl;      // true (1)
+	std::cout << nestedParens("()") << std::endl;          // true (1)
+	std::cout << nestedParens("") << std::endl;            // true (1)
+	
+	std::cout << nestedParens("(((") << std::endl;         // false (0)
+	std::cout << nestedParens("(()") << std::endl;         // false (0)
+	std::cout << nestedParens(")(") << std::endl;          // false (0)
+	std::cout << nestedParens("a(b)c") << std::endl;       // false (0)
 	return 0;
 }
